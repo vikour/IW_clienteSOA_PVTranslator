@@ -4,6 +4,24 @@
 <xsd:import namespace="http://ws.a6.uma.es/" schemaLocation="http://localhost:8080/WS_Modulo/WS_Modulo?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="remove">
+<part name="parameters" element="tns:remove"/>
+</message>
+<message name="count">
+<part name="parameters" element="tns:count"/>
+</message>
+<message name="countResponse">
+<part name="parameters" element="tns:countResponse"/>
+</message>
+<message name="find">
+<part name="parameters" element="tns:find"/>
+</message>
+<message name="findResponse">
+<part name="parameters" element="tns:findResponse"/>
+</message>
+<message name="create">
+<part name="parameters" element="tns:create"/>
+</message>
 <message name="findAll">
 <part name="parameters" element="tns:findAll"/>
 </message>
@@ -12,6 +30,12 @@
 </message>
 <message name="edit">
 <part name="parameters" element="tns:edit"/>
+</message>
+<message name="findRange">
+<part name="parameters" element="tns:findRange"/>
+</message>
+<message name="findRangeResponse">
+<part name="parameters" element="tns:findRangeResponse"/>
 </message>
 <message name="findAllOrderedByName">
 <part name="parameters" element="tns:findAllOrderedByName"/>
@@ -49,37 +73,37 @@
 <message name="findModuloByCampañaResponse">
 <part name="parameters" element="tns:findModuloByCampañaResponse"/>
 </message>
-<message name="findRange">
-<part name="parameters" element="tns:findRange"/>
+<message name="findModuloByNombre">
+<part name="parameters" element="tns:findModuloByNombre"/>
 </message>
-<message name="findRangeResponse">
-<part name="parameters" element="tns:findRangeResponse"/>
-</message>
-<message name="remove">
-<part name="parameters" element="tns:remove"/>
-</message>
-<message name="count">
-<part name="parameters" element="tns:count"/>
-</message>
-<message name="countResponse">
-<part name="parameters" element="tns:countResponse"/>
-</message>
-<message name="find">
-<part name="parameters" element="tns:find"/>
-</message>
-<message name="findResponse">
-<part name="parameters" element="tns:findResponse"/>
-</message>
-<message name="create">
-<part name="parameters" element="tns:create"/>
+<message name="findModuloByNombreResponse">
+<part name="parameters" element="tns:findModuloByNombreResponse"/>
 </message>
 <portType name="WS_Modulo">
+<operation name="remove">
+<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/remove" message="tns:remove"/>
+</operation>
+<operation name="count">
+<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/countRequest" message="tns:count"/>
+<output wsam:Action="http://ws.a6.uma.es/WS_Modulo/countResponse" message="tns:countResponse"/>
+</operation>
+<operation name="find">
+<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findRequest" message="tns:find"/>
+<output wsam:Action="http://ws.a6.uma.es/WS_Modulo/findResponse" message="tns:findResponse"/>
+</operation>
+<operation name="create">
+<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/create" message="tns:create"/>
+</operation>
 <operation name="findAll">
 <input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findAllRequest" message="tns:findAll"/>
 <output wsam:Action="http://ws.a6.uma.es/WS_Modulo/findAllResponse" message="tns:findAllResponse"/>
 </operation>
 <operation name="edit">
 <input wsam:Action="http://ws.a6.uma.es/WS_Modulo/edit" message="tns:edit"/>
+</operation>
+<operation name="findRange">
+<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findRangeRequest" message="tns:findRange"/>
+<output wsam:Action="http://ws.a6.uma.es/WS_Modulo/findRangeResponse" message="tns:findRangeResponse"/>
 </operation>
 <operation name="findAllOrderedByName">
 <input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findAllOrderedByNameRequest" message="tns:findAllOrderedByName"/>
@@ -105,27 +129,43 @@
 <input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findModuloByCampañaRequest" message="tns:findModuloByCampaña"/>
 <output wsam:Action="http://ws.a6.uma.es/WS_Modulo/findModuloByCampañaResponse" message="tns:findModuloByCampañaResponse"/>
 </operation>
-<operation name="findRange">
-<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findRangeRequest" message="tns:findRange"/>
-<output wsam:Action="http://ws.a6.uma.es/WS_Modulo/findRangeResponse" message="tns:findRangeResponse"/>
-</operation>
-<operation name="remove">
-<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/remove" message="tns:remove"/>
-</operation>
-<operation name="count">
-<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/countRequest" message="tns:count"/>
-<output wsam:Action="http://ws.a6.uma.es/WS_Modulo/countResponse" message="tns:countResponse"/>
-</operation>
-<operation name="find">
-<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findRequest" message="tns:find"/>
-<output wsam:Action="http://ws.a6.uma.es/WS_Modulo/findResponse" message="tns:findResponse"/>
-</operation>
-<operation name="create">
-<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/create" message="tns:create"/>
+<operation name="findModuloByNombre">
+<input wsam:Action="http://ws.a6.uma.es/WS_Modulo/findModuloByNombreRequest" message="tns:findModuloByNombre"/>
+<output wsam:Action="http://ws.a6.uma.es/WS_Modulo/findModuloByNombreResponse" message="tns:findModuloByNombreResponse"/>
 </operation>
 </portType>
 <binding name="WS_ModuloPortBinding" type="tns:WS_Modulo">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="remove">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
+<operation name="count">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="find">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="create">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
 <operation name="findAll">
 <soap:operation soapAction=""/>
 <input>
@@ -140,6 +180,15 @@
 <input>
 <soap:body use="literal"/>
 </input>
+</operation>
+<operation name="findRange">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 <operation name="findAllOrderedByName">
 <soap:operation soapAction=""/>
@@ -195,7 +244,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="findRange">
+<operation name="findModuloByNombre">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -203,36 +252,6 @@
 <output>
 <soap:body use="literal"/>
 </output>
-</operation>
-<operation name="remove">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-</operation>
-<operation name="count">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="find">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="create">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
 </operation>
 </binding>
 <service name="WS_Modulo">
