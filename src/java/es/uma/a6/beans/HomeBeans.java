@@ -26,7 +26,7 @@ public class HomeBeans {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.wsdl")
     private WSPVTranslator_Service service;
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WS_Modulo/WS_Modulo.wsdl")
+    
     @Inject ConfigurationSessionBeans config;
     
     private List<Modulo> modulos;
@@ -38,12 +38,13 @@ public class HomeBeans {
     /**
      * Creates a new instance of HomeBeans
      */
+    
     public HomeBeans() {
     }
     
     @PostConstruct
     public void init(){
-        modulos=this.findAllModulo();
+       modulos=this.findAllModulo();
         moduloSeleccionado=null;
     }
 
@@ -104,6 +105,9 @@ public class HomeBeans {
         es.uma.a6.ws.WSPVTranslator port = service.getWSPVTranslatorPort();
         port.removeModulo(entity);
     }
+
+   
+
     
     
     
