@@ -5,9 +5,12 @@
  */
 package es.uma.a6.beans;
 
+import es.uma.a6.wsmodulo.Modulo;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
+
 
 /**
  *
@@ -17,10 +20,23 @@ import java.io.Serializable;
 @SessionScoped
 public class ConfigurationSessionBeans implements Serializable {
 
-    /**
-     * Creates a new instance of ConfigurationSessionBeans
-     */
+    private Modulo moduloSeleccionado;
+
+    
     public ConfigurationSessionBeans() {
     }
     
+    @PostConstruct
+    public void init(){
+        moduloSeleccionado=null;
+        
+    }
+    
+    public Modulo getModulo(){
+        return moduloSeleccionado;
+    }
+    
+    public void setModulo(Modulo m){
+        moduloSeleccionado=m;
+    }
 }

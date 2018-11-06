@@ -42,6 +42,7 @@ public class HomeBeans {
     @PostConstruct
     public void init(){
         modulos=this.findAll();
+        moduloSeleccionado=null;
     }
 
     public List<Modulo> getModulos() {
@@ -75,9 +76,25 @@ public class HomeBeans {
         
     }
     
-    public void doEditar(Modulo m){
+    public boolean hayModuloSeleccionado(){
+        return config.getModulo()!=null;//devuelve true si hay modulo seleccionado
+    }
+    
+    public String doEditar(Modulo m){
+        config.setModulo(m);
+        return "moduloForm.xhtml";
         
+    }
+    
+    public String doNew(){
+        config.setModulo(null);
+        return "moduloForm.xhtml";
         
+    }
+    
+    public String goCampanya(Modulo m){
+        config.setModulo(m);
+        return "Campanyas.xhtml";
     }
 
     private void remove(es.uma.a6.wsmodulo.Modulo entity) {
