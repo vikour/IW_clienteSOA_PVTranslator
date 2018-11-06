@@ -5,7 +5,7 @@
  */
 package es.uma.a6.beans;
 
-import es.uma.a6.wsmodulo.Modulo;
+import es.uma.a6.ws.Modulo;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;

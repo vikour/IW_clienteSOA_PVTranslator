@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.a6.uma.es/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.a6.uma.es/">
+
+<xs:element name="campaña" type="tns:campaña"/>
+
+<xs:element name="createCampanya" type="tns:createCampanya"/>
+
+<xs:element name="createModulo" type="tns:createModulo"/>
+
+<xs:element name="editCampanya" type="tns:editCampanya"/>
+
+<xs:element name="editModulo" type="tns:editModulo"/>
+
+<xs:element name="findAllCampanya" type="tns:findAllCampanya"/>
+
+<xs:element name="findAllCampanyaOrderedByDateAsc" type="tns:findAllCampanyaOrderedByDateAsc"/>
+
+<xs:element name="findAllCampanyaOrderedByDateAscResponse" type="tns:findAllCampanyaOrderedByDateAscResponse"/>
+
+<xs:element name="findAllCampanyaOrderedByDateDesc" type="tns:findAllCampanyaOrderedByDateDesc"/>
+
+<xs:element name="findAllCampanyaOrderedByDateDescResponse" type="tns:findAllCampanyaOrderedByDateDescResponse"/>
+
+<xs:element name="findAllCampanyaOrderedByName" type="tns:findAllCampanyaOrderedByName"/>
+
+<xs:element name="findAllCampanyaOrderedByNameResponse" type="tns:findAllCampanyaOrderedByNameResponse"/>
+
+<xs:element name="findAllCampanyaResponse" type="tns:findAllCampanyaResponse"/>
+
+<xs:element name="findAllModulo" type="tns:findAllModulo"/>
+
+<xs:element name="findAllModuloOrderedByAlpha" type="tns:findAllModuloOrderedByAlpha"/>
+
+<xs:element name="findAllModuloOrderedByAlphaResponse" type="tns:findAllModuloOrderedByAlphaResponse"/>
+
+<xs:element name="findAllModuloOrderedByBeta" type="tns:findAllModuloOrderedByBeta"/>
+
+<xs:element name="findAllModuloOrderedByBetaResponse" type="tns:findAllModuloOrderedByBetaResponse"/>
+
+<xs:element name="findAllModuloOrderedByGamma" type="tns:findAllModuloOrderedByGamma"/>
+
+<xs:element name="findAllModuloOrderedByGammaResponse" type="tns:findAllModuloOrderedByGammaResponse"/>
+
+<xs:element name="findAllModuloOrderedByKappa" type="tns:findAllModuloOrderedByKappa"/>
+
+<xs:element name="findAllModuloOrderedByKappaResponse" type="tns:findAllModuloOrderedByKappaResponse"/>
+
+<xs:element name="findAllModuloOrderedByName" type="tns:findAllModuloOrderedByName"/>
+
+<xs:element name="findAllModuloOrderedByNameResponse" type="tns:findAllModuloOrderedByNameResponse"/>
+
+<xs:element name="findAllModuloResponse" type="tns:findAllModuloResponse"/>
+
+<xs:element name="findCampanya" type="tns:findCampanya"/>
+
+<xs:element name="findCampanyaByModulo" type="tns:findCampanyaByModulo"/>
+
+<xs:element name="findCampanyaByModuloResponse" type="tns:findCampanyaByModuloResponse"/>
+
+<xs:element name="findCampanyaResponse" type="tns:findCampanyaResponse"/>
+
+<xs:element name="findModulo" type="tns:findModulo"/>
+
+<xs:element name="findModuloByCampaña" type="tns:findModuloByCampaña"/>
+
+<xs:element name="findModuloByCampañaResponse" type="tns:findModuloByCampañaResponse"/>
+
+<xs:element name="findModuloByNombre" type="tns:findModuloByNombre"/>
+
+<xs:element name="findModuloByNombreResponse" type="tns:findModuloByNombreResponse"/>
+
+<xs:element name="findModuloResponse" type="tns:findModuloResponse"/>
+
+<xs:element name="modulo" type="tns:modulo"/>
+
+<xs:element name="removeCampanya" type="tns:removeCampanya"/>
+
+<xs:element name="removeModulo" type="tns:removeModulo"/>
+
+<xs:complexType name="createCampanya">
+<xs:sequence>
+<xs:element name="entity" type="tns:campaña" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="campaña">
+<xs:sequence>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="modulo" type="tns:modulo" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modulo">
+<xs:sequence>
+<xs:element name="alpha" type="xs:double"/>
+<xs:element name="beta" type="xs:double"/>
+<xs:element name="gamma" type="xs:double"/>
+<xs:element name="kappa" type="xs:double"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createModulo">
+<xs:sequence>
+<xs:element name="entity" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editModulo">
+<xs:sequence>
+<xs:element name="entity" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findModuloByCampaña">
+<xs:sequence>
+<xs:element name="c" type="tns:campaña" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findModuloByCampañaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editCampanya">
+<xs:sequence>
+<xs:element name="entity" type="tns:campaña" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCampanyaByModulo">
+<xs:sequence>
+<xs:element name="m" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCampanyaByModuloResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:campaña" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaOrderedByName">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaOrderedByNameResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:campaña" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaOrderedByDateAsc">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaOrderedByDateAscResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:campaña" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanya">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:campaña" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findModulo">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findModuloResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByAlpha">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByAlphaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeCampanya">
+<xs:sequence>
+<xs:element name="entity" type="tns:campaña" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeModulo">
+<xs:sequence>
+<xs:element name="entity" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByKappa">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByKappaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findModuloByNombre">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findModuloByNombreResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByBeta">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByBetaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByGamma">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByGammaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaOrderedByDateDesc">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaOrderedByDateDescResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:campaña" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCampanya">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCampanyaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:campaña" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByName">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloOrderedByNameResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllModulo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllModuloResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
