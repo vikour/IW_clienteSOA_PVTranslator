@@ -29,6 +29,7 @@ public class ConfigurationSessionBeans implements Serializable {
     @PostConstruct
     public void init(){
         moduloSeleccionado=null;
+        
     }
     
     public Modulo getModulo(){
