@@ -26,37 +26,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-WS_Modulo" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/WS_Modulo"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WS_Modulo" destdir="${build.generated.dir}/jax-wsCache/WS_Modulo" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Modulo/wsdl/localhost_8080/WS_Modulo/WS_Modulo.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WS_Modulo/WS_Modulo?wsdl" xnocompile="true" xendorsed="true" package="es.uma.a6.wsmodulo">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Modulo/wsdl/localhost_8080/WS_Modulo/WS_Modulo.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/WS_Modulo"/>
+    <target name="wsimport-client-WSPV_Translator" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSPV_Translator"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPV_Translator" destdir="${build.generated.dir}/jax-wsCache/WSPV_Translator" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSPV_Translator/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSPV_Translator/WSPV_Translator?wsdl" xnocompile="true" xendorsed="true" package="es.uma.a6.ws">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSPV_Translator/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSPV_Translator"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/WS_Modulo">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSPV_Translator">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-WS_Modulo" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/es/uma/a6/wsmodulo"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/WS_Modulo"/>
+    <target name="wsimport-client-clean-WSPV_Translator" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/es/uma/a6/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSPV_Translator"/>
     </target>
-    <target name="wsimport-client-WS_Campanya" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/WS_Campanya"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WS_Campanya" destdir="${build.generated.dir}/jax-wsCache/WS_Campanya" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Campanya/wsdl/localhost_8080/WS_Campanya/WS_Campanya.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WS_Campanya/WS_Campanya?wsdl" xnocompile="true" xendorsed="true" package="es.uma.a6.wscampanya">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Campanya/wsdl/localhost_8080/WS_Campanya/WS_Campanya.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/WS_Campanya"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/WS_Campanya">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-WS_Campanya" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/es/uma/a6/wscampanya"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/WS_Campanya"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WS_Modulo, wsimport-client-WS_Campanya"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSPV_Translator"/>
 </project>

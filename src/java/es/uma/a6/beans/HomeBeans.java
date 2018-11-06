@@ -6,8 +6,8 @@
 package es.uma.a6.beans;
 
 
-import es.uma.a6.wsmodulo.Modulo;
-import es.uma.a6.wsmodulo.WSModulo_Service;
+import es.uma.a6.ws.Modulo;
+import es.uma.a6.ws.WSPVTranslator_Service;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
@@ -23,8 +23,10 @@ import javax.xml.ws.WebServiceRef;
 @RequestScoped
 public class HomeBeans {
 
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.wsdl")
+    private WSPVTranslator_Service service;
+
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WS_Modulo/WS_Modulo.wsdl")
-    private WSModulo_Service service;
     @Inject ConfigurationSessionBeans config;
     
     private List<Modulo> modulos;
@@ -41,7 +43,7 @@ public class HomeBeans {
     
     @PostConstruct
     public void init(){
-        modulos=this.findAll();
+        modulos=this.findAllModulo();
         moduloSeleccionado=null;
     }
 
@@ -61,17 +63,9 @@ public class HomeBeans {
         this.moduloSeleccionado = moduloSeleccionado;
     }
     
-    
-
-    private java.util.List<es.uma.a6.wsmodulo.Modulo> findAll() {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        es.uma.a6.wsmodulo.WSModulo port = service.getWSModuloPort();
-        return port.findAll();
-    }
     public String doBorrar(Modulo m){
         
-        remove(m);
+        removeModulo(m);
         return "index.xhtml";
         
     }
@@ -97,14 +91,19 @@ public class HomeBeans {
         return "Campanyas.xhtml";
     }
 
-    private void remove(es.uma.a6.wsmodulo.Modulo entity) {
+    private java.util.List<es.uma.a6.ws.Modulo> findAllModulo() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        es.uma.a6.wsmodulo.WSModulo port = service.getWSModuloPort();
-        port.remove(entity);
+        es.uma.a6.ws.WSPVTranslator port = service.getWSPVTranslatorPort();
+        return port.findAllModulo();
     }
-    
-    
+
+    private void removeModulo(es.uma.a6.ws.Modulo entity) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        es.uma.a6.ws.WSPVTranslator port = service.getWSPVTranslatorPort();
+        port.removeModulo(entity);
+    }
     
     
     
