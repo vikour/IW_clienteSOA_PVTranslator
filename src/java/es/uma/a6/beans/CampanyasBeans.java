@@ -52,7 +52,6 @@ public class CampanyasBeans {
         return campañas;
     }
     
-    
     public void doRemove(Campaña c){
         campañas.remove(c);
         this.removeCampanya(c);        
