@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Editar módulo</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="templates/common.xhtml">
+            <ui:define name="header">
+                <h3>Formulario del módulo</h3>
+            </ui:define>
+
+
+
+            <ui:define name="content">
+
+                <h:form>
+                    <table>
+                        <tr>
+                            <td><b>Nombre: </b></td>
+                            <td><input type="text" name="nombreModulo" value="#{moduloFormBeans.m.nombre}" /></td>         <!-- value= valor del nombre por defecto del modulo -->
+                        </tr>
+                        <tr>
+                            <td><b>Alfa: </b></td>
+                            <td><input type="text" name="alfaModulo" value="#{moduloFormBeans.m.alfa}" /></td>         <!-- value= valor del alfa por defecto del modulo -->
+                        </tr>
+                        <tr>
+                            <td><b>Beta: </b></td>
+                            <td><input type="text" name="betaModulo" value="#{moduloFormBeans.m.beta}" /></td>         <!-- value= valor del beta por defecto del modulo -->
+                        </tr>
+                        <tr>
+                            <td><b>Gamma: </b></td>
+                            <td><input type="text" name="gammaModulo" value="#{moduloFormBeans.m.gamma}" /></td>         <!-- value= valor del gamma por defecto del modulo -->
+                        </tr>
+                        <tr>
+                            <td><b>Kappa: </b></td>
+                            <td><input type="text" name="kappaModulo" value="#{moduloFormBeans.m.kappa}" /></td>         <!-- value= valor del kappa por defecto del modulo -->
+                        </tr>  
+                    </table>
+
+                    <h:commandButton value = "Confirmar" onclick = "#{moduloFormBeans.cambioModulo()}" ></h:commandButton> 
+                </h:form>
+
+                <h:commandButton value = "Atras" onclick = "#{moduloFormBeans.atras()}" ></h:commandButton> 
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>
+
