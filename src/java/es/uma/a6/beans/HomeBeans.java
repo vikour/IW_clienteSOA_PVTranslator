@@ -71,9 +71,6 @@ public class HomeBeans {
         
     }
     
-    public boolean hayModuloSeleccionado(){
-        return config.getModulo()!=null;//devuelve true si hay modulo seleccionado
-    }
     
     public String doEditar(Modulo m){
         config.setModulo(m);
