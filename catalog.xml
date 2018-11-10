@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/WS_Campanya/WS_Campanya?wsdl" uri="src/conf/xml-resources/web-service-references/WS_Campanya/wsdl/localhost_8080/WS_Campanya/WS_Campanya.wsdl"/>
-    <system systemId="http://localhost:8080/WS_Campanya/WS_Campanya?xsd=1" uri="src/conf/xml-resources/web-service-references/WS_Campanya/wsdl/localhost_8080/WS_Campanya/WS_Campanya.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WS_Modulo/WS_Modulo?wsdl" uri="src/conf/xml-resources/web-service-references/WS_Modulo/wsdl/localhost_8080/WS_Modulo/WS_Modulo.wsdl"/>
     <system systemId="http://localhost:8080/WS_Modulo/WS_Modulo?xsd=1" uri="src/conf/xml-resources/web-service-references/WS_Modulo/wsdl/localhost_8080/WS_Modulo/WS_Modulo.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WS_Campanya/WS_Campanya?wsdl" uri="src/conf/xml-resources/web-service-references/WS_Campanya/wsdl/localhost_8080/WS_Campanya/WS_Campanya.wsdl"/>
+    <system systemId="http://localhost:8080/WS_Campanya/WS_Campanya?xsd=1" uri="src/conf/xml-resources/web-service-references/WS_Campanya/wsdl/localhost_8080/WS_Campanya/WS_Campanya.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WSPV_Translator/WSPV_Translator?wsdl" uri="src/conf/xml-resources/web-service-references/WSPV_Translator/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.wsdl"/>
     <system systemId="http://localhost:8080/WSPV_Translator/WSPV_Translator?xsd=1" uri="src/conf/xml-resources/web-service-references/WSPV_Translator/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.xsd_1.xsd"/>
 </catalog>

@@ -40,6 +40,10 @@
 
 <xs:element name="findModuloByCampañaResponse" type="tns:findModuloByCampañaResponse"/>
 
+<xs:element name="findModuloByNombre" type="tns:findModuloByNombre"/>
+
+<xs:element name="findModuloByNombreResponse" type="tns:findModuloByNombreResponse"/>
+
 <xs:element name="findRange" type="tns:findRange"/>
 
 <xs:element name="findRangeResponse" type="tns:findRangeResponse"/>
@@ -50,15 +54,15 @@
 
 <xs:element name="remove" type="tns:remove"/>
 
-<xs:complexType name="findRange">
+<xs:complexType name="findModuloByNombre">
 <xs:sequence>
-<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="findRangeResponse">
+<xs:complexType name="findModuloByNombreResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="tns:modulo" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -69,6 +73,18 @@
 <xs:element name="gamma" type="xs:double"/>
 <xs:element name="kappa" type="xs:double"/>
 <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRange">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:modulo" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

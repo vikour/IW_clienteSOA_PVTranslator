@@ -4,17 +4,26 @@
 <xsd:import namespace="http://ws.a6.uma.es/" schemaLocation="http://localhost:8080/WSPV_Translator/WSPV_Translator?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="findModulo">
-<part name="parameters" element="tns:findModulo"/>
+<message name="findModuloByCampaña">
+<part name="parameters" element="tns:findModuloByCampaña"/>
 </message>
-<message name="findModuloResponse">
-<part name="parameters" element="tns:findModuloResponse"/>
+<message name="findModuloByCampañaResponse">
+<part name="parameters" element="tns:findModuloByCampañaResponse"/>
 </message>
-<message name="findAllModulo">
-<part name="parameters" element="tns:findAllModulo"/>
+<message name="findModuloByNombre">
+<part name="parameters" element="tns:findModuloByNombre"/>
 </message>
-<message name="findAllModuloResponse">
-<part name="parameters" element="tns:findAllModuloResponse"/>
+<message name="findModuloByNombreResponse">
+<part name="parameters" element="tns:findModuloByNombreResponse"/>
+</message>
+<message name="createCampanya">
+<part name="parameters" element="tns:createCampanya"/>
+</message>
+<message name="editCampanya">
+<part name="parameters" element="tns:editCampanya"/>
+</message>
+<message name="removeCampanya">
+<part name="parameters" element="tns:removeCampanya"/>
 </message>
 <message name="findCampanya">
 <part name="parameters" element="tns:findCampanya"/>
@@ -28,29 +37,62 @@
 <message name="findAllCampanyaResponse">
 <part name="parameters" element="tns:findAllCampanyaResponse"/>
 </message>
-<message name="editCampanya">
-<part name="parameters" element="tns:editCampanya"/>
+<message name="findAllCampanyaOrderedByName">
+<part name="parameters" element="tns:findAllCampanyaOrderedByName"/>
 </message>
-<message name="createCampanya">
-<part name="parameters" element="tns:createCampanya"/>
+<message name="findAllCampanyaOrderedByNameResponse">
+<part name="parameters" element="tns:findAllCampanyaOrderedByNameResponse"/>
 </message>
-<message name="editModulo">
-<part name="parameters" element="tns:editModulo"/>
+<message name="findAllCampanyaOrderedByDateAsc">
+<part name="parameters" element="tns:findAllCampanyaOrderedByDateAsc"/>
+</message>
+<message name="findAllCampanyaOrderedByDateAscResponse">
+<part name="parameters" element="tns:findAllCampanyaOrderedByDateAscResponse"/>
+</message>
+<message name="findAllCampanyaOrderedByDateDesc">
+<part name="parameters" element="tns:findAllCampanyaOrderedByDateDesc"/>
+</message>
+<message name="findAllCampanyaOrderedByDateDescResponse">
+<part name="parameters" element="tns:findAllCampanyaOrderedByDateDescResponse"/>
+</message>
+<message name="findCampanyaByModulo">
+<part name="parameters" element="tns:findCampanyaByModulo"/>
+</message>
+<message name="findCampanyaByModuloResponse">
+<part name="parameters" element="tns:findCampanyaByModuloResponse"/>
 </message>
 <message name="createModulo">
 <part name="parameters" element="tns:createModulo"/>
 </message>
+<message name="editModulo">
+<part name="parameters" element="tns:editModulo"/>
+</message>
 <message name="removeModulo">
 <part name="parameters" element="tns:removeModulo"/>
 </message>
-<message name="removeCampanya">
-<part name="parameters" element="tns:removeCampanya"/>
+<message name="findModulo">
+<part name="parameters" element="tns:findModulo"/>
+</message>
+<message name="findModuloResponse">
+<part name="parameters" element="tns:findModuloResponse"/>
+</message>
+<message name="findAllModulo">
+<part name="parameters" element="tns:findAllModulo"/>
+</message>
+<message name="findAllModuloResponse">
+<part name="parameters" element="tns:findAllModuloResponse"/>
 </message>
 <message name="findAllModuloOrderedByName">
 <part name="parameters" element="tns:findAllModuloOrderedByName"/>
 </message>
 <message name="findAllModuloOrderedByNameResponse">
 <part name="parameters" element="tns:findAllModuloOrderedByNameResponse"/>
+</message>
+<message name="findAllModuloOrderedByAlpha">
+<part name="parameters" element="tns:findAllModuloOrderedByAlpha"/>
+</message>
+<message name="findAllModuloOrderedByAlphaResponse">
+<part name="parameters" element="tns:findAllModuloOrderedByAlphaResponse"/>
 </message>
 <message name="findAllModuloOrderedByBeta">
 <part name="parameters" element="tns:findAllModuloOrderedByBeta"/>
@@ -70,56 +112,23 @@
 <message name="findAllModuloOrderedByGammaResponse">
 <part name="parameters" element="tns:findAllModuloOrderedByGammaResponse"/>
 </message>
-<message name="findModuloByCampaña">
-<part name="parameters" element="tns:findModuloByCampaña"/>
-</message>
-<message name="findModuloByCampañaResponse">
-<part name="parameters" element="tns:findModuloByCampañaResponse"/>
-</message>
-<message name="findModuloByNombre">
-<part name="parameters" element="tns:findModuloByNombre"/>
-</message>
-<message name="findModuloByNombreResponse">
-<part name="parameters" element="tns:findModuloByNombreResponse"/>
-</message>
-<message name="findAllCampanyaOrderedByName">
-<part name="parameters" element="tns:findAllCampanyaOrderedByName"/>
-</message>
-<message name="findAllCampanyaOrderedByNameResponse">
-<part name="parameters" element="tns:findAllCampanyaOrderedByNameResponse"/>
-</message>
-<message name="findAllModuloOrderedByAlpha">
-<part name="parameters" element="tns:findAllModuloOrderedByAlpha"/>
-</message>
-<message name="findAllModuloOrderedByAlphaResponse">
-<part name="parameters" element="tns:findAllModuloOrderedByAlphaResponse"/>
-</message>
-<message name="findAllCampanyaOrderedByDateDesc">
-<part name="parameters" element="tns:findAllCampanyaOrderedByDateDesc"/>
-</message>
-<message name="findAllCampanyaOrderedByDateDescResponse">
-<part name="parameters" element="tns:findAllCampanyaOrderedByDateDescResponse"/>
-</message>
-<message name="findAllCampanyaOrderedByDateAsc">
-<part name="parameters" element="tns:findAllCampanyaOrderedByDateAsc"/>
-</message>
-<message name="findAllCampanyaOrderedByDateAscResponse">
-<part name="parameters" element="tns:findAllCampanyaOrderedByDateAscResponse"/>
-</message>
-<message name="findCampanyaByModulo">
-<part name="parameters" element="tns:findCampanyaByModulo"/>
-</message>
-<message name="findCampanyaByModuloResponse">
-<part name="parameters" element="tns:findCampanyaByModuloResponse"/>
-</message>
 <portType name="WSPV_Translator">
-<operation name="findModulo">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloRequest" message="tns:findModulo"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloResponse" message="tns:findModuloResponse"/>
+<operation name="findModuloByCampaña">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByCampañaRequest" message="tns:findModuloByCampaña"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByCampañaResponse" message="tns:findModuloByCampañaResponse"/>
 </operation>
-<operation name="findAllModulo">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloRequest" message="tns:findAllModulo"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloResponse" message="tns:findAllModuloResponse"/>
+<operation name="findModuloByNombre">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByNombreRequest" message="tns:findModuloByNombre"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByNombreResponse" message="tns:findModuloByNombreResponse"/>
+</operation>
+<operation name="createCampanya">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/createCampanya" message="tns:createCampanya"/>
+</operation>
+<operation name="editCampanya">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/editCampanya" message="tns:editCampanya"/>
+</operation>
+<operation name="removeCampanya">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/removeCampanya" message="tns:removeCampanya"/>
 </operation>
 <operation name="findCampanya">
 <input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findCampanyaRequest" message="tns:findCampanya"/>
@@ -129,27 +138,46 @@
 <input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaRequest" message="tns:findAllCampanya"/>
 <output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaResponse" message="tns:findAllCampanyaResponse"/>
 </operation>
-<operation name="editCampanya">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/editCampanya" message="tns:editCampanya"/>
+<operation name="findAllCampanyaOrderedByName">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByNameRequest" message="tns:findAllCampanyaOrderedByName"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByNameResponse" message="tns:findAllCampanyaOrderedByNameResponse"/>
 </operation>
-<operation name="createCampanya">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/createCampanya" message="tns:createCampanya"/>
+<operation name="findAllCampanyaOrderedByDateAsc">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateAscRequest" message="tns:findAllCampanyaOrderedByDateAsc"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateAscResponse" message="tns:findAllCampanyaOrderedByDateAscResponse"/>
 </operation>
-<operation name="editModulo">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/editModulo" message="tns:editModulo"/>
+<operation name="findAllCampanyaOrderedByDateDesc">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateDescRequest" message="tns:findAllCampanyaOrderedByDateDesc"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateDescResponse" message="tns:findAllCampanyaOrderedByDateDescResponse"/>
+</operation>
+<operation name="findCampanyaByModulo">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findCampanyaByModuloRequest" message="tns:findCampanyaByModulo"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findCampanyaByModuloResponse" message="tns:findCampanyaByModuloResponse"/>
 </operation>
 <operation name="createModulo">
 <input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/createModulo" message="tns:createModulo"/>
 </operation>
+<operation name="editModulo">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/editModulo" message="tns:editModulo"/>
+</operation>
 <operation name="removeModulo">
 <input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/removeModulo" message="tns:removeModulo"/>
 </operation>
-<operation name="removeCampanya">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/removeCampanya" message="tns:removeCampanya"/>
+<operation name="findModulo">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloRequest" message="tns:findModulo"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloResponse" message="tns:findModuloResponse"/>
+</operation>
+<operation name="findAllModulo">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloRequest" message="tns:findAllModulo"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloResponse" message="tns:findAllModuloResponse"/>
 </operation>
 <operation name="findAllModuloOrderedByName">
 <input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByNameRequest" message="tns:findAllModuloOrderedByName"/>
 <output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByNameResponse" message="tns:findAllModuloOrderedByNameResponse"/>
+</operation>
+<operation name="findAllModuloOrderedByAlpha">
+<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByAlphaRequest" message="tns:findAllModuloOrderedByAlpha"/>
+<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByAlphaResponse" message="tns:findAllModuloOrderedByAlphaResponse"/>
 </operation>
 <operation name="findAllModuloOrderedByBeta">
 <input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByBetaRequest" message="tns:findAllModuloOrderedByBeta"/>
@@ -163,38 +191,10 @@
 <input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByGammaRequest" message="tns:findAllModuloOrderedByGamma"/>
 <output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByGammaResponse" message="tns:findAllModuloOrderedByGammaResponse"/>
 </operation>
-<operation name="findModuloByCampaña">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByCampañaRequest" message="tns:findModuloByCampaña"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByCampañaResponse" message="tns:findModuloByCampañaResponse"/>
-</operation>
-<operation name="findModuloByNombre">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByNombreRequest" message="tns:findModuloByNombre"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findModuloByNombreResponse" message="tns:findModuloByNombreResponse"/>
-</operation>
-<operation name="findAllCampanyaOrderedByName">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByNameRequest" message="tns:findAllCampanyaOrderedByName"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByNameResponse" message="tns:findAllCampanyaOrderedByNameResponse"/>
-</operation>
-<operation name="findAllModuloOrderedByAlpha">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByAlphaRequest" message="tns:findAllModuloOrderedByAlpha"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllModuloOrderedByAlphaResponse" message="tns:findAllModuloOrderedByAlphaResponse"/>
-</operation>
-<operation name="findAllCampanyaOrderedByDateDesc">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateDescRequest" message="tns:findAllCampanyaOrderedByDateDesc"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateDescResponse" message="tns:findAllCampanyaOrderedByDateDescResponse"/>
-</operation>
-<operation name="findAllCampanyaOrderedByDateAsc">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateAscRequest" message="tns:findAllCampanyaOrderedByDateAsc"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findAllCampanyaOrderedByDateAscResponse" message="tns:findAllCampanyaOrderedByDateAscResponse"/>
-</operation>
-<operation name="findCampanyaByModulo">
-<input wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findCampanyaByModuloRequest" message="tns:findCampanyaByModulo"/>
-<output wsam:Action="http://ws.a6.uma.es/WSPV_Translator/findCampanyaByModuloResponse" message="tns:findCampanyaByModuloResponse"/>
-</operation>
 </portType>
 <binding name="WSPV_TranslatorPortBinding" type="tns:WSPV_Translator">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="findModulo">
+<operation name="findModuloByCampaña">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -203,7 +203,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="findAllModulo">
+<operation name="findModuloByNombre">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -211,6 +211,24 @@
 <output>
 <soap:body use="literal"/>
 </output>
+</operation>
+<operation name="createCampanya">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
+<operation name="editCampanya">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
+<operation name="removeCampanya">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
 </operation>
 <operation name="findCampanya">
 <soap:operation soapAction=""/>
@@ -230,13 +248,43 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="editCampanya">
+<operation name="findAllCampanyaOrderedByName">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
 </input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
-<operation name="createCampanya">
+<operation name="findAllCampanyaOrderedByDateAsc">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findAllCampanyaOrderedByDateDesc">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findCampanyaByModulo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="createModulo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -248,25 +296,40 @@
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="createModulo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-</operation>
 <operation name="removeModulo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="removeCampanya">
+<operation name="findModulo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
 </input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findAllModulo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 <operation name="findAllModuloOrderedByName">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findAllModuloOrderedByAlpha">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -294,69 +357,6 @@
 </output>
 </operation>
 <operation name="findAllModuloOrderedByGamma">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findModuloByCampaña">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findModuloByNombre">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findAllCampanyaOrderedByName">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findAllModuloOrderedByAlpha">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findAllCampanyaOrderedByDateDesc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findAllCampanyaOrderedByDateAsc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="findCampanyaByModulo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

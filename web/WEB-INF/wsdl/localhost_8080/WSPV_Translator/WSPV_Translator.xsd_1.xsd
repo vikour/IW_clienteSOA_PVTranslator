@@ -112,12 +112,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="editCampanya">
-<xs:sequence>
-<xs:element name="entity" type="tns:campaña" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="findModuloByCampaña">
 <xs:sequence>
 <xs:element name="c" type="tns:campaña" minOccurs="0"/>
@@ -127,6 +121,12 @@
 <xs:complexType name="findModuloByCampañaResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:modulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editCampanya">
+<xs:sequence>
+<xs:element name="entity" type="tns:campaña" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -162,6 +162,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="findAllCampanya">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllCampanyaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:campaña" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="findModulo">
 <xs:sequence>
 <xs:element name="id" type="xs:anyType" minOccurs="0"/>
@@ -171,16 +181,6 @@
 <xs:complexType name="findModuloResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:modulo" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="findAllCampanya">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="findAllCampanyaResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:campaña" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
