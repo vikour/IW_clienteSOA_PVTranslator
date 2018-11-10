@@ -75,7 +75,7 @@ public class HomeBeans {
         
         removeModulo(m);
         modulos=findAllModulo();
-        //return "index.xhtml";
+        
         
     }
     
