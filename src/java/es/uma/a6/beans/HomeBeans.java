@@ -71,11 +71,11 @@ public class HomeBeans {
         this.moduloSeleccionado = moduloSeleccionado;
     }
     
-    public String doBorrar(Modulo m){
+    public void doBorrar(Modulo m){
         
         removeModulo(m);
         modulos=findAllModulo();
-        return "index.xhtml";
+        //return "index.xhtml";
         
     }
     

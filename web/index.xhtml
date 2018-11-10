@@ -19,7 +19,7 @@
                                  var="modulo"
                                  class="table"
                                  headerClass="text-center"
-                                 rowClasses="text-center">
+                                 rowClasses="text-center" id="tabla">
 
                         <h:column>
                             <f:facet name="header"></f:facet>
@@ -55,7 +55,10 @@
                         <h:column class="mr-auto">
                             <f:facet name="header"></f:facet>
                             <h:commandLink type="button" class="btn btn-secondary" action="#{homeBeans.doEditar(modulo)}" value="Editar"/>
-                            <h:commandLink type="button" class="btn btn-danger" action="#{homeBeans.doBorrar(modulo)}" value="Borrar"/>
+                            <h:commandLink type="button" class="btn btn-danger" action="#{homeBeans.doBorrar(modulo)}" value="Borrar">
+                                <f:ajax render="@form" execute="@form"/>
+                            </h:commandLink>
+                            
                         </h:column>
 
                     </h:dataTable>
