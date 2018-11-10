@@ -94,7 +94,7 @@ public class HomeBeans {
     
     public String goCampanya(Modulo m){
         config.setModulo(m);
-        return "Campanyas.xhtml";
+        return "campanyas.xhtml";
     }
 
     private java.util.List<es.uma.a6.ws.Modulo> findAllModulo() {
