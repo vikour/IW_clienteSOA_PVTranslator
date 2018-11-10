@@ -2,46 +2,60 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
     
     <h:head>
         <title> Campa&ntilde;as del Módulo: </title>
     </h:head>
     <h:body>
-        <h2>Campa&ntilde;as</h2>
-        <h3>Modulo: <h:outputText value="#{campanyasBeans.modulo.nombre}"/></h3>  
-    
-   <!-- <p><h:outputText id="num" value="#{campanyasBeans.campañas.size()}"/></p> -->
+        <ui:composition template="templates/common.xhtml">
+            <ui:define name="header">
+                <h2>Campa&ntilde;as</h2>
+            </ui:define>
+            <ui:define name="content">
+                
+                <h3>Modulo: <h:outputText value="#{campanyasBeans.modulo.nombre}"/></h3>  
 
-        <h:dataTable id="tabla" value="#{campanyasBeans.campañas}" var="camp">
-            <h:column>
-                <h:form>
-                    <h:commandButton value="Ver" action="#{campanyasBeans.doVer(camp)}"/>
-                </h:form>
-            </h:column>
-            
-            <h:column>
-                <f:facet name="header"> Nombre </f:facet>
-                <h:outputText value="#{camp.nombre}"/>
-            </h:column>
-            
-            <h:column>
-                <f:facet name="header"> Fecha </f:facet>
-                <h:outputText value="#{camp.fecha.toGregorianCalendar().time}">
-                    <f:convertDateTime pattern = "dd/MM/yyyy" />
-                </h:outputText>
-            </h:column>
-            
-            <h:column>
-                <h:form>
-                    <h:commandButton value="Eliminar">
-                        <f:ajax event="click" listener="#{campanyasBeans.doRemove(camp)}" render="tabla"/>
-                    </h:commandButton>
-                </h:form>
-            </h:column>
-            
-        </h:dataTable>
+                <div class="table-wrapper-scroll-y">
+
+                    <h:dataTable id="tabla" value="#{campanyasBeans.campañas}" var="camp"
+                                 class="table"
+                                 headerClass="text-center"
+                                 rowClasses="text-center">
+                        <h:column>
+                            <h:form>
+                                <h:commandButton type="button" class="btn btn-secondary" value="Ver" action="#{campanyasBeans.doVer(camp)}"/>
+                            </h:form>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header"> Nombre </f:facet>
+                            <h:outputText value="#{camp.nombre}"/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header"> Fecha </f:facet>
+                            <h:outputText value="#{camp.fecha.toGregorianCalendar().time}">
+                                <f:convertDateTime pattern = "dd/MM/yyyy" />
+                            </h:outputText>
+                        </h:column>
+
+                        <h:column>
+                            <h:form>
+                                <h:commandButton type="button" class="btn btn-danger" value="Eliminar">
+                                    <f:ajax event="click" listener="#{campanyasBeans.doRemove(camp)}" render="tabla"/>
+                                </h:commandButton>
+                            </h:form>
+                        </h:column>
+
+                    </h:dataTable>
+
+                </div>
+                
+            </ui:define>
+        </ui:composition>
+        
     </h:body>
 </html>
-

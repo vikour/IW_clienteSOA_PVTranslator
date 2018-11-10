@@ -26,7 +26,6 @@ public class HomeBeans {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.wsdl")
     private WSPVTranslator_Service service;
 
-    
     @Inject ConfigurationSessionBeans config;
     
     private List<Modulo> modulos;
@@ -41,13 +40,21 @@ public class HomeBeans {
     
     public HomeBeans() {
     }
-    
+    /*
     @PostConstruct
     public void init(){
        modulos=this.findAllModulo();
         moduloSeleccionado=null;
-    }
+    }*/
 
+    @PostConstruct
+    public void initialize() {
+
+        config.setModulo(null);
+        modulos = findAllModulo();
+
+    }
+    
     public List<Modulo> getModulos() {
         return modulos;
     }
@@ -64,16 +71,14 @@ public class HomeBeans {
         this.moduloSeleccionado = moduloSeleccionado;
     }
     
-    public String doBorrar(Modulo m){
+    public void doBorrar(Modulo m){
         
         removeModulo(m);
-        return "index.xhtml";
+        modulos=findAllModulo();
+        //return "index.xhtml";
         
     }
     
-    public boolean hayModuloSeleccionado(){
-        return config.getModulo()!=null;//devuelve true si hay modulo seleccionado
-    }
     
     public String doEditar(Modulo m){
         config.setModulo(m);
@@ -106,9 +111,4 @@ public class HomeBeans {
         port.removeModulo(entity);
     }
 
-   
-
-    
-    
-    
 }

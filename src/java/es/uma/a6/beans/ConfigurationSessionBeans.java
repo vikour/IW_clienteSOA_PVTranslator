@@ -39,4 +39,5 @@ public class ConfigurationSessionBeans implements Serializable {
     public void setModulo(Modulo m){
         moduloSeleccionado=m;
     }
+    
 }
