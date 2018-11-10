@@ -14,48 +14,82 @@
             </ui:define>
             <ui:define name="content">
                 <h:form>
+                    <div class="table-wrapper-scroll-y">
                     <h:dataTable value="#{homeBeans.modulos}"
-                                 var="modulo">
+                                 var="modulo"
+                                 class="table"
+                                 headerClass="text-center"
+                                 rowClasses="text-center">
 
                         <h:column>
                             <f:facet name="header">Nombre</f:facet>
-                            <!-- nombre -->
+                            #{modulo.nombre}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">Alpha</f:facet>
-                            <!-- nombre -->
+                            #{modulo.alpha}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">Beta</f:facet>
-                            <!-- nombre -->
+                            #{modulo.beta}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">Gamma</f:facet>
-                            <!-- nombre -->
+                            #{modulo.gamma}
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">Kappa</f:facet>
-                            <!-- nombre -->
+                            #{modulo.kappa}
                         </h:column>
 
-                        <h:column>
+                        <h:column class="mr-auto">
                             <f:facet name="header"></f:facet>
-                            <!-- nombre -->
+                            <button type="button" class="btn btn-secondary">Editar</button>
+                            <button type="button" class="btn btn-danger">Borrar</button>
                         </h:column>
 
                     </h:dataTable>
-
-                    <!--
-                    <h:commandButton value="+" onclick="doNew()" />
-                    -->
-                    <h:inputFile>
-
-                    </h:inputFile>
+                    </div>
                 </h:form>
+                <p>
+                    <button type="button" class="btn btn-primary">Nuevo</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Importar
+                    </button>
+                </p>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <h:form enctype="multipart/form-data">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Importar</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="importar-file">Seleccione el fichero con los módulos</label>
+                                        <h:inputFile class="form-control-file"
+                                                     id="importar-file">
+                                            
+                                        </h:inputFile>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Subir</button>                                    
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
 
             </ui:define>
         </ui:composition>

@@ -26,7 +26,6 @@ public class HomeBeans {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WSPV_Translator/WSPV_Translator.wsdl")
     private WSPVTranslator_Service service;
 
-    
     @Inject ConfigurationSessionBeans config;
     
     private List<Modulo> modulos;
@@ -41,13 +40,21 @@ public class HomeBeans {
     
     public HomeBeans() {
     }
-    
+    /*
     @PostConstruct
     public void init(){
        modulos=this.findAllModulo();
         moduloSeleccionado=null;
-    }
+    }*/
 
+    @PostConstruct
+    public void initialize() {
+
+        config.setModulo(null);
+        modulos = findAllModulo();
+
+    }
+    
     public List<Modulo> getModulos() {
         return modulos;
     }
@@ -66,7 +73,7 @@ public class HomeBeans {
     
     public String doBorrar(Modulo m){
         
-        removeModulo(m);
+        //removeModulo(m);
         return "index.xhtml";
         
     }
@@ -99,12 +106,7 @@ public class HomeBeans {
         return port.findAllModulo();
     }
 
-    private void removeModulo(es.uma.a6.ws.Modulo entity) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        es.uma.a6.ws.WSPVTranslator port = service.getWSPVTranslatorPort();
-        port.removeModulo(entity);
-    }
+   
 
    
 
