@@ -6,8 +6,7 @@
 package es.uma.a6.beans;
 
 
-import es.uma.a6.ws.Modulo;
-import es.uma.a6.ws.WSPVTranslator_Service;
+import es.uma.a6.ws.Modulo;import es.uma.a6.ws.WSPVTranslator_Service;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
@@ -30,8 +29,7 @@ public class HomeBeans {
     
     private List<Modulo> modulos;
     
-    private Modulo moduloSeleccionado;
-    
+    private Modulo moduloSeleccionado;    
     
 
     /**
@@ -78,7 +76,7 @@ public class HomeBeans {
         
         
     }
-    
+       
     
     public String doEditar(Modulo m){
         config.setModulo(m);

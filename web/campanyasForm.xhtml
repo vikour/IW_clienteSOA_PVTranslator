@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Crear editar Campa&ntilde;a</title>
+    </h:head>
+    <h:body>
+        <h2><h:outputText value="#{campanyasFormBean.crearEditar}"/> Campa&ntilde;a</h2>
+        
+        <br/>
+        <h:form>
+            <table>
+                <tr>
+                    <td> Modulo: </td>
+                    <td> <h:outputText value="#{campanyasFormBean.modulo.nombre}"/> </td>
+                </tr>
+                <tr>
+                    <td> Nombre: </td>
+                    <td> <h:inputText value="#{campanyasFormBean.campaña.nombre}"/> </td>
+                    <td> Error </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h:commandButton action="#{campanyasFormBean.doAtras()}" value="Atras"/>
+                    </td>
+                    <td>
+                        <h:commandButton action="#{campanyasFormBean.doBoton()}" value="#{campanyasFormBean.crearEditar}"/>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
+

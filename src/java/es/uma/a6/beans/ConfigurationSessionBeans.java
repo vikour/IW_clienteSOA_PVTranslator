@@ -5,6 +5,7 @@
  */
 package es.uma.a6.beans;
 
+import es.uma.a6.ws.Campaña;
 import es.uma.a6.ws.Modulo;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -21,6 +22,7 @@ import javax.annotation.PostConstruct;
 public class ConfigurationSessionBeans implements Serializable {
 
     private Modulo moduloSeleccionado;
+    private Campaña campañaSeleccionada;
 
     
     public ConfigurationSessionBeans() {
@@ -39,5 +41,14 @@ public class ConfigurationSessionBeans implements Serializable {
     public void setModulo(Modulo m){
         moduloSeleccionado=m;
     }
+    
+    public Campaña getCampañaSeleccionada() {
+        return campañaSeleccionada;
+    }
+
+    public void setCampañaSeleccionada(Campaña campañaSeleccionada) {
+        this.campañaSeleccionada = campañaSeleccionada;
+    }
+    
     
 }

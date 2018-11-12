@@ -57,6 +57,16 @@ public class CampanyasBeans {
         this.removeCampanya(c);        
     }
     
+    public String doNuevo(){
+        sesion.setCampañaSeleccionada(null);
+        return "campanyasForm.xhtml";
+    }
+    
+    public String doEditar(Campaña c){
+        sesion.setCampañaSeleccionada(c);
+        return "campanyasForm.xhtml";
+    }
+    
     public String doVer(Campaña c){
         // Not Implemented yet
         return null;
