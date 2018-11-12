@@ -31,29 +31,24 @@ public class FormatoModulo extends FormatoFichero {
     private boolean sobreescribir;
 
     @Override
-    public Object leer(File file) {
-        BufferedReader br=null;
-        Modulo m=null;
-        sobreescribir=true;
-        
-        try {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "ISO-8859-15"));
-            m=construirMod(br);
-            
-            // comunicación con server.
-            Modulo mserver = findModuloByNombre(m.getNombre());
-            
-            if (mserver != null)
-                editModulo(m);
-            else
-                createModulo(m);
-            
-        } catch (Exception ex) {
-            Logger.getLogger(FormatoModulo.class.getName()).log(Level.SEVERE, null, ex);
+    public Object leer(File file) throws IOException {
+        BufferedReader br = null;
+        Modulo m = null;
+        sobreescribir = true;
+
+        br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "ISO-8859-15"));
+        m = construirMod(br);
+
+        // comunicación con server.
+        Modulo mserver = findModuloByNombre(m.getNombre());
+        if (mserver != null) {
+            editModulo(m);
+        } else {
+            createModulo(m);
         }
-        
+
         return m;
-      }
+    }
     
     private String readNotEmptyLine(BufferedReader br) throws IOException {
         String aux = null;

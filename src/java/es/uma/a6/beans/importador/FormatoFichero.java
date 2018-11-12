@@ -2,6 +2,7 @@
 package es.uma.a6.beans.importador;
 
 import java.io.File;
+import java.io.IOException;
 
 public abstract class FormatoFichero {
     
@@ -11,7 +12,7 @@ public abstract class FormatoFichero {
         notificar = ctr;
     }
     
-    public abstract Object leer(File file);
+    public abstract Object leer(File file) throws IOException;
     public abstract void escribir(File file, Object object);
     public abstract String getExtension();
     

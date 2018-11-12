@@ -45,6 +45,10 @@ public class Importador extends SwingWorker<Void, Void> implements IFormatoFiche
     public void setImportadorNotificable(ImportadorNotificable importadorNotificable) {
         this.importadorNotificable = importadorNotificable;
     }
+
+    public void setFmt(FormatoFichero fmt) {
+        this.fmt = fmt;
+    }
     
     public List<Object> importar() throws FileNotFoundException, IOException {
         List<Object> list = new ArrayList<>();

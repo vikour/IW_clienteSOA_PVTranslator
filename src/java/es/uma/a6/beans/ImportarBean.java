@@ -53,12 +53,23 @@ public class ImportarBean {
         try {
             if (file != null) {
                 f = subirFichero();
-                importador = new Importador(new FormatoCampaña(), f);
-                importador.importar();
+                importador = new Importador(new FormatoModulo(), f);
+                
+                try {
+                    importador.importar();
+                }
+                catch(Exception ex) {
+                    importador.setFmt(new FormatoCampaña());
+                    
+                    try {
+                        importador.importar();
+                    }
+                    catch (Exception ex2) {
+                        FacesContext.getCurrentInstance()
+                                .addMessage(null, new FacesMessage("Se esperaba un formato de módulo o campaña."));
+                    }
+                }
             }
-        }
-        catch (IOException ex) {
-            System.out.println("PERNEEE");
         }
         finally  {
             if (f != null)

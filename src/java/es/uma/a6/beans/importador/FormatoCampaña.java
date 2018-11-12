@@ -23,18 +23,12 @@ public class FormatoCampaña extends FormatoFichero{
     private boolean sobreescribir;
 
     @Override
-    public Object leer(File file) {
+    public Object leer(File file) throws IOException {
         BufferedReader br = null;
         Campaña campaña = null;
         
-        try {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "ISO-8859-15"));
-            
-            campaña = leerInfoBasica(br);
-        } 
-        catch (Exception ex) {
-            System.out.println("PERNE");
-        }
+        br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "ISO-8859-15"));
+        campaña = leerInfoBasica(br);
         
         return campaña;
     }
