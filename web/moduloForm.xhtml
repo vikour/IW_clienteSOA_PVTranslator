@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+      <h:head>
+        <title>Editar módulo</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="templates/common.xhtml">
+            <ui:define name="header">
+                <h3>Formulario del módulo</h3>
+            </ui:define>
+
+
+
+            <ui:define name="content">
+                <h:form>
+                    <div class="container">
+
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <h:outputLabel>Nombre</h:outputLabel>
+                            </div>
+                            <div class="col-3">
+                                <h:inputText class="form-control" id="nombre" value="#{moduloFormBeans.m.nombre}">
+                                    <f:ajax listener="#{moduloFormBeans.comprobarError()}" event="keyup" render="errorN" />
+                                </h:inputText>
+                                <h:outputText id="errorN" style="color: red" value="#{moduloFormBeans.errorN}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <h:outputLabel>Alpha</h:outputLabel>
+                            </div>
+                            <div class="col-2">
+                                <h:inputText class="form-control" id="alpha" value="#{moduloFormBeans.m.alpha}">
+                                    <f:ajax listener="#{moduloFormBeans.comprobarA()}" event="keyup" render="errorA" />
+                                </h:inputText>
+                                <h:outputText id="errorA" style="color: red" value="#{moduloFormBeans.errorA}"/>
+                            </div>
+                        </div>
+                       
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <h:outputLabel>Beta</h:outputLabel>
+                            </div>
+                            <div class="col-2">
+                                <h:inputText class="form-control" id="beta" value="#{moduloFormBeans.m.beta}">
+                                    <f:ajax listener="#{moduloFormBeans.comprobarB()}" event="keyup" render="errorB" />
+                                </h:inputText>
+                                <h:outputText id="errorB" style="color: red" value="#{moduloFormBeans.errorB}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <h:outputLabel>Gamma</h:outputLabel>
+                            </div>
+                            <div class="col-2">
+                                <h:inputText class="form-control" id="gamma" value="#{moduloFormBeans.m.gamma}">
+                                    <f:ajax listener="#{moduloFormBeans.comprobarG()}" event="keyup" render="errorG" />
+                                </h:inputText>
+                                <h:outputText id="errorG" style="color: red" value="#{moduloFormBeans.errorG}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <h:outputLabel>Kappa</h:outputLabel>
+                            </div>
+                            <div class="col-2">
+                                <h:inputText class="form-control" id="kappa" value="#{moduloFormBeans.m.kappa}">
+                                    <f:ajax listener="#{moduloFormBeans.comprobarK()}" event="keyup" render="errorK" />
+                                </h:inputText>
+                                <h:outputText id="errorK" style="color: red" value="#{moduloFormBeans.errorK}"/>
+                            </div>
+                        </div>
+                        
+                        <div class = "row justify-content-center">
+                            <div class = "pt-3 pb-3 pl-3 pr-3" dir="rtl">
+                            
+                                <h:commandLink class="btn btn-primary" id="botonConfirmar" value = "Confirmar" action = "#{moduloFormBeans.doCrearEditar()}" ></h:commandLink> 
+                                <h:commandLink class="btn btn-secondary" id="botonAtras" value = "Atras" action = "#{moduloFormBeans.atras()}" ></h:commandLink> 
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                </h:form>
+                
+            </ui:define>
+        </ui:composition>
+        
+    </h:body>
+</html>

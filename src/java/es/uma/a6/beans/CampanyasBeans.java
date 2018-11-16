@@ -57,6 +57,10 @@ public class CampanyasBeans {
         this.removeCampanya(c);        
     }
     
+    public String doAtras(){
+        return "index.xhtml";
+    }
+    
     public String doVer(Campaña c){
         // Not Implemented yet
         return null;
