@@ -1,0 +1,27 @@
+/*
+    Created on : 10-nov-2018, 14:26:49
+    Author     : vikour
+*/
+
+body {
+    background-color: #E5E8E8;
+}
+
+tr th:last-child, tr td:last-child {
+    width: 200px;
+}
+
+#main-content {
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+}

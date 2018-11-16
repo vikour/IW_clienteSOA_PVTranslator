@@ -141,13 +141,14 @@ public class ModuloFormBeans {
     
     public String doCrearEditar(){
         String next="";
-        if(m.getKappa()>=0 && m.getAlpha()>=0 && m.getBeta()>=0 && m.getGamma()>=0 && findModuloByNombre(m.getNombre())==null && !m.getNombre().equals("")){
+        if(m.getKappa()>=0 && m.getAlpha()>=0 && m.getBeta()>=0 && m.getGamma()>=0 && !m.getNombre().equals("")){
             if(creationMode==false){                //se modifica el módulo
                 editModulo(m);
-            }else{                                  //se crea un nuevo módulo
+                next="index.xhtml";
+            }else if(findModuloByNombre(m.getNombre())==null){                                  //se crea un nuevo módulo
                 createModulo(m);
+                next="index.xhtml";
             }
-            next="index.xhtml";
         }else{
             next="moduloForm.xhtml";
         }
