@@ -14,6 +14,8 @@ tr th:last-child, tr td:last-child {
 #main-content {
     background-color: #fff;
     margin-top: 20px;
+    padding-bottom: 20px;
+    min-width: 500px;
 }
 
 h1,h2,h3,h4,h5,h6 {

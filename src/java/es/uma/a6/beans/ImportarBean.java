@@ -46,36 +46,59 @@ public class ImportarBean {
         this.file = file;
     }
     
+    /**
+     * Llamada del usuario que importará el fichero establecido como parámetro en
+     * el formulario.
+     */
+    
     public void doImport() {
         File f = null;
         Importador importador;
+        boolean importado = false;
         
         try {
             if (file != null) {
                 f = subirFichero();
                 importador = new Importador(new FormatoModulo(), f);
+                importado = intentarImprotar(importador);
                 
-                try {
-                    importador.importar();
-                }
-                catch(Exception ex) {
+                if (!importado) {
                     importador.setFmt(new FormatoCampaña());
-                    
-                    try {
-                        importador.importar();
-                    }
-                    catch (Exception ex2) {
-                        FacesContext.getCurrentInstance()
-                                .addMessage(null, new FacesMessage("Se esperaba un formato de módulo o campaña."));
-                    }
+                    importado = intentarImprotar(importador);
                 }
+                
+                if (!importado) 
+                    FacesContext.getCurrentInstance()
+                   .addMessage(null, new FacesMessage("Se esperaba un formato de módulo o campaña."));
             }
         }
         finally  {
+            // Borramos el fichero subido si no es nulo, ya que el importador borra
+            // los ficheros intermedios, no el fichero de importación.
             if (f != null)
                 f.delete();
         }
         
+    }
+    
+    /**
+     * Intenta importar ejecutar el método importar del importador.
+     * 
+     * @param importador Objeto importador
+     * 
+     * @return Verdadero si consiguió importar el fichero, falso en otro caso.
+     */
+    
+    private boolean intentarImprotar(Importador importador) {
+        boolean exito = true;
+        
+        try {
+            importador.importar();
+        }
+        catch (Exception ex) {
+            exito = false;
+        }
+        return exito;
     }
 
     private File subirFichero() {
